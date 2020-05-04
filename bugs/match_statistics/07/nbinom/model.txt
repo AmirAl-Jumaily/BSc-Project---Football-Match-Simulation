@@ -1,0 +1,39 @@
+model {
+    for (g in 1:nGames) {
+        home.data[g] ~ dnegbin(home.p[HomeT[g]], home.r[HomeT[g]])
+        # awayOpp.data[g] ~ dnegbin(againstAwayTeam.p[AwayT[g]], againstAwayTeam.r[AwayT[g]])
+
+        away.data[g] ~ dnegbin(away.p[AwayT[g]], away.r[AwayT[g]])
+        # homeOpp.data[g] ~ dnegbin(againstHomeTeam.p[HomeT[g]], againstHomeTeam.r[HomeT[g]])
+    }
+
+    for (t in 1:nTeams) {
+        home.p[t] ~ dbeta(home.p.alpha, home.p.beta)
+        home.r[t] ~ dpois(home.r.lambda)
+        
+        away.p[t] ~ dbeta(away.p.alpha, away.p.beta)
+        away.r[t] ~ dpois(away.r.lambda)
+
+        # againstHomeTeam.p[t] ~ dbeta(againstHomeTeam.p.alpha, againstHomeTeam.p.beta)
+        # againstHomeTeam.r[t] ~ dpois(againstHomeTeam.r.lambda)
+
+        # againstAwayTeam.p[t] ~ dbeta(againstAwayTeam.p.alpha, againstAwayTeam.p.beta)
+        # againstAwayTeam.r[t] ~ dpois(againstAwayTeam.r.lambda)
+    }
+
+    home.p.alpha ~ dgamma(0.1, 0.1)
+    home.p.beta ~ dgamma(0.1, 0.1)
+    home.r.lambda ~ dgamma(0.1, 0.1)
+
+    away.p.alpha ~ dgamma(0.1, 0.1)
+    away.p.beta ~ dgamma(0.1, 0.1)
+    away.r.lambda ~ dgamma(0.1, 0.1)
+    
+    # againstHomeTeam.p.alpha ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.p.beta ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.r.lambda ~ dgamma(0.1, 0.1)
+
+    # againstAwayTeam.p.alpha ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.p.beta ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.r.lambda ~ dgamma(0.1, 0.1)
+}

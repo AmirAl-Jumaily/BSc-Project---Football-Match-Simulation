@@ -1,0 +1,43 @@
+model {
+    for (g in 1:nGames) {
+        home.data[g] ~ dgamma(home.shape[HomeT[g]], home.rate[HomeT[g]])
+        # awayOpp.data[g] ~ dgamma(againstAwayTeam.shape[AwayT[g]], againstAwayTeam.rate[AwayT[g]])
+
+        away.data[g] ~ dgamma(away.shape[AwayT[g]], away.rate[AwayT[g]])
+        # homeOpp.data[g] ~ dgamma(againstHomeTeam.shape[HomeT[g]], againstHomeTeam.rate[HomeT[g]])
+    }
+
+    for (t in 1:nTeams) {
+        home.shape[t] ~ dgamma(home.shape.shape, home.shape.rate)
+        home.rate[t] ~ dgamma(home.rate.shape, home.rate.rate)
+
+        away.shape[t] ~ dgamma(away.shape.shape, away.shape.rate)
+        away.rate[t] ~ dgamma(away.rate.shape, away.rate.rate)
+
+        # againstHomeTeam.shape[t] ~ dgamma(againstHomeTeam.shape.shape, againstHomeTeam.shape.rate)
+        # againstHomeTeam.rate[t] ~ dgamma(againstHomeTeam.rate.shape, againstHomeTeam.rate.rate)
+
+        # againstAwayTeam.shape[t] ~ dgamma(againstAwayTeam.shape.shape, againstAwayTeam.shape.rate)
+        # againstAwayTeam.rate[t] ~ dgamma(againstAwayTeam.rate.shape, againstAwayTeam.rate.rate)
+    }
+
+    home.shape.shape ~ dgamma(0.1, 0.1)
+    home.shape.rate ~ dgamma(0.1, 0.1)
+    home.rate.shape ~ dgamma(0.1, 0.1)
+    home.rate.rate ~ dgamma(0.1, 0.1)
+
+    away.shape.shape ~ dgamma(0.1, 0.1)
+    away.shape.rate ~ dgamma(0.1, 0.1)
+    away.rate.shape ~ dgamma(0.1, 0.1)
+    away.rate.rate ~ dgamma(0.1, 0.1)
+
+    # againstHomeTeam.shape.shape ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.shape.rate ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.rate.shape ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.rate.rate ~ dgamma(0.1, 0.1)
+
+    # againstAwayTeam.shape.shape ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.shape.rate ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.rate.shape ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.rate.rate ~ dgamma(0.1, 0.1)
+}

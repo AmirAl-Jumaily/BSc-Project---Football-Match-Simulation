@@ -1,0 +1,859 @@
+{
+    "MATCH_INFO": {
+        "COLUMNS": [
+            "fixture_id",
+            "country",
+            "league_name",
+            "league_id",
+            "league_type",
+            "league_season",
+            "fixture_date",
+            "fixture_round",
+            "fixture_status",
+            "fixture_elapsed",
+            "fixture_venue",
+            "fixture_referee",
+            "fixture_result_ht",
+            "fixture_result_ft",
+            "fixture_result_et",
+            "fixture_result_pen",
+            "home_team_name",
+            "home_team_id",
+            "away_team_name",
+            "away_team_id",
+            "home_goals",
+            "away_goals"
+        ]
+    },
+    "MATCH_STAT": {
+        "COLUMN_RENAME_MAP": {
+            "name": "league_name",
+            "type": "league_type",
+            "season": "league_season",
+            "round": "fixture_round",
+            "status": "fixture_status",
+            "elapsed": "fixture_elapsed",
+            "venue": "fixture_venue",
+            "referee": "fixture_referee",
+            "score.halftime": "fixture_result_ht",
+            "score.fulltime": "fixture_result_ft",
+            "score.extratime": "fixture_result_et",
+            "score.penalty": "fixture_result_pen",
+            "homeTeam.team_name": "home_team_name",
+            "homeTeam.team_id": "home_team_id",
+            "awayTeam.team_name": "away_team_name",
+            "awayTeam.team_id": "away_team_id",
+            "goalsHomeTeam": "home_goals",
+            "goalsAwayTeam": "away_goals",
+            "match_statistics.Shots on Goal.home": "home_shots_ont",
+            "match_statistics.Shots on Goal.away": "away_shots_ont",
+            "match_statistics.Shots off Goal.home": "home_shots_offt",
+            "match_statistics.Shots off Goal.away": "away_shots_offt",
+            "match_statistics.Blocked Shots.home": "home_shots_bl",
+            "match_statistics.Blocked Shots.away": "away_shots_bl",
+            "match_statistics.Total Shots.home": "home_shots_tot",
+            "match_statistics.Total Shots.away": "away_shots_tot",
+            "match_statistics.Shots insidebox.home": "home_shots_inb",
+            "match_statistics.Shots insidebox.away": "away_shots_inb",
+            "match_statistics.Shots outsidebox.home": "home_shots_outb",
+            "match_statistics.Shots outsidebox.away": "away_shots_outb",
+            "match_statistics.Fouls.home": "home_fouls",
+            "match_statistics.Fouls.away": "away_fouls",
+            "match_statistics.Yellow Cards.home": "home_yc",
+            "match_statistics.Yellow Cards.away": "away_yc",
+            "match_statistics.Red Cards.home": "home_rc",
+            "match_statistics.Red Cards.away": "away_rc",
+            "match_statistics.Passes accurate.home": "home_passes_acc",
+            "match_statistics.Passes accurate.away": "away_passes_acc",
+            "match_statistics.Total passes.home": "home_passes_tot",
+            "match_statistics.Total passes.away": "away_passes_tot",
+            "match_statistics.Passes %.home": "home_passes_pct",
+            "match_statistics.Passes %.away": "away_passes_pct",
+            "match_statistics.Ball Possession.home": "home_possession",
+            "match_statistics.Ball Possession.away": "away_possession",
+            "match_statistics.Corner Kicks.home": "home_corners",
+            "match_statistics.Corner Kicks.away": "away_corners",
+            "match_statistics.Offsides.home": "home_offsides",
+            "match_statistics.Offsides.away": "away_offsides",
+            "match_statistics.Goalkeeper Saves.home": "home_gksaves",
+            "match_statistics.Goalkeeper Saves.away": "away_gksaves"
+        },
+        "COLUMNS": [
+            "has_match_stats",
+            "home_shots_ont",
+            "away_shots_ont",
+            "home_shots_offt",
+            "away_shots_offt",
+            "home_shots_bl",
+            "away_shots_bl",
+            "home_shots_tot",
+            "away_shots_tot",
+            "home_shots_inb",
+            "away_shots_inb",
+            "home_shots_outb",
+            "away_shots_outb",
+            "home_passes_acc",
+            "away_passes_acc",
+            "home_passes_tot",
+            "away_passes_tot",
+            "home_passes_pct",
+            "away_passes_pct",
+            "home_possession",
+            "away_possession",
+            "home_corners",
+            "away_corners",
+            "home_offsides",
+            "away_offsides",
+            "home_fouls",
+            "away_fouls",
+            "home_yc",
+            "away_yc",
+            "home_rc",
+            "away_rc",
+            "home_gksaves",
+            "away_gksaves"
+        ],
+        "COLUMN_DTYPE_MAP": {
+            "fixture_id": "int64",
+            "country": "object",
+            "league_name": "object",
+            "league_id": "int64",
+            "league_type": "object",
+            "league_season": "int64",
+            "fixture_date": "object",
+            "fixture_round": "object",
+            "fixture_status": "object",
+            "fixture_elapsed": "int64",
+            "fixture_venue": "object",
+            "fixture_referee": "object",
+            "fixture_result_ht": "object",
+            "fixture_result_ft": "object",
+            "fixture_result_et": "object",
+            "fixture_result_pen": "object",
+            "home_team_name": "object",
+            "home_team_id": "int64",
+            "away_team_name": "object",
+            "away_team_id": "int64",
+            "home_goals": "float64",
+            "away_goals": "float64",
+            "has_match_stats": "bool",
+            "home_shots_ont": "float64",
+            "away_shots_ont": "float64",
+            "home_shots_offt": "float64",
+            "away_shots_offt": "float64",
+            "home_shots_tot": "float64",
+            "away_shots_tot": "float64",
+            "home_shots_inb": "float64",
+            "away_shots_inb": "float64",
+            "home_shots_outb": "float64",
+            "away_shots_outb": "float64",
+            "home_passes_acc": "float64",
+            "away_passes_acc": "float64",
+            "home_passes_tot": "float64",
+            "away_passes_tot": "float64",
+            "home_passes_pct": "float64",
+            "away_passes_pct": "float64",
+            "home_possession": "float64",
+            "away_possession": "float64",
+            "home_corners": "float64",
+            "away_corners": "float64",
+            "home_offsides": "float64",
+            "away_offsides": "float64",
+            "home_fouls": "float64",
+            "away_fouls": "float64",
+            "home_yc": "float64",
+            "away_yc": "float64",
+            "home_rc": "float64",
+            "away_rc": "float64",
+            "home_gksaves": "float64",
+            "away_gksaves": "float64",
+            "home_shots_bl": "float64",
+            "away_shots_bl": "float64"
+        }
+    },
+    "MATCH_EVENT": {
+        "COLUMN_RENAME_MAP": {
+            "league.country": "country",
+            "league.name": "league_name",
+            "type": "league_type",
+            "season": "league_season",
+            "round": "fixture_round",
+            "status": "fixture_status",
+            "elapsed": "fixture_elapsed",
+            "venue": "fixture_venue",
+            "referee": "fixture_referee",
+            "score.halftime": "fixture_result_ht",
+            "score.fulltime": "fixture_result_ft",
+            "score.extratime": "fixture_result_et",
+            "score.penalty": "fixture_result_pen",
+            "homeTeam.team_id": "home_team_id",
+            "homeTeam.team_name": "home_team_name",
+            "awayTeam.team_id": "away_team_id",
+            "awayTeam.team_name": "away_team_name",
+            "goalsHomeTeam": "home_goals",
+            "goalsAwayTeam": "away_goals",
+            "events.elapsed": "event_time_elapsed",
+            "events.elapsed_plus": "event_time_elapsed_plus",
+            "events.team_id": "event_team_id",
+            "events.teamName": "event_team_name",
+            "events.player": "event_player_name",
+            "events.type": "event_type",
+            "events.detail": "event_detail",
+            "events.comments": "event_comments"
+        },
+        "COLUMNS": [
+            "event_team_id",
+            "event_team_name",
+            "event_player_name",
+            "event_time_elapsed",
+            "event_time_elapsed_plus",
+            "event_type",
+            "event_detail",
+            "event_comments"
+        ],
+        "COLUMN_DTYPE_MAP": {
+            "fixture_id": "int64",
+            "country": "object",
+            "league_name": "object",
+            "league_id": "int64",
+            "league_type": "object",
+            "league_season": "int64",
+            "fixture_date": "object",
+            "fixture_round": "object",
+            "fixture_status": "object",
+            "fixture_elapsed": "int64",
+            "fixture_venue": "object",
+            "fixture_referee": "object",
+            "fixture_result_ht": "object",
+            "fixture_result_ft": "object",
+            "fixture_result_et": "object",
+            "fixture_result_pen": "object",
+            "home_team_name": "object",
+            "home_team_id": "int64",
+            "away_team_name": "object",
+            "away_team_id": "int64",
+            "home_goals": "float64",
+            "away_goals": "float64",
+            "event_time_elapsed": "float64",
+            "event_time_elapsed_plus": "float64",
+            "event_team_id": "int64",
+            "event_team_name": "object",
+            "event_player_name": "object",
+            "event_type": "object",
+            "event_detail": "object",
+            "event_comments": "object"
+        },
+        "DATA_TO_ADD": {
+            "44458": [
+                {
+                    "event_player_name": "S. Boey",
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 10,
+                    "event_comments": null
+                },
+                {
+                    "event_player_name": "E. Camavinga",
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 10,
+                    "event_comments": null
+                }
+            ],
+            "55223": [
+                {
+                    "event_time_elapsed": 77
+                }
+            ],
+            "57134": [
+                {
+                    "event_player_name": "\u00d3scar Trejo",
+                    "event_time_elapsed": 55
+                }
+            ],
+            "102735": [
+                {
+                    "event_player_name": "\u00c1lvaro Cejudo Carmona",
+                    "event_time_elapsed": 64
+                }
+            ],
+            "104313": [
+                {
+                    "event_player_name": "Emmanuel Rivi\u00e8re",
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            ],
+            "42269": [
+                {
+                    "event_player_name": "Glody Ngonda Muzinga",
+                    "event_time_elapsed": 86
+                }
+            ],
+            "91147": [
+                {
+                    "event_detail": "Yellow Card"
+                }
+            ],
+            "101797": [
+                {
+                    "event_player_name": "V\u00edctor Camarasa"
+                }
+            ],
+            "102371": [
+                {
+                    "event_player_name": "Kiko Femen\u00eda",
+                    "event_time_elapsed": 88
+                }
+            ],
+            "102752": [
+                {
+                    "event_player_name": "Sandro Ram\u00edrez"
+                }
+            ],
+            "136046": [
+                {
+                    "event_time_elapsed": 55
+                },
+                {
+                    "event_time_elapsed": 55,
+                    "event_detail": "Red Card"
+                }
+            ],
+            "191859": [
+                {
+                    "event_time_elapsed": 66
+                },
+                {
+                    "event_time_elapsed": 66,
+                    "event_detail": "Red Card"
+                }
+            ]
+        },
+        "DATA_TO_DELETE": [
+            {
+                "fixture_id": 157091,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Norwich",
+                "event_time_elapsed": 88
+            },
+            {
+                "fixture_id": 157096,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Aston Villa",
+                "event_time_elapsed": 42
+            },
+            {
+                "fixture_id": 157129,
+                "event_detail": "Own Goal",
+                "event_team_name": "Manchester United",
+                "event_time_elapsed": 19
+            },
+            {
+                "fixture_id": 157067,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Chelsea",
+                "event_time_elapsed": 27
+            },
+            {
+                "fixture_id": 157101,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Liverpool",
+                "event_time_elapsed": 42
+            },
+            {
+                "fixture_id": 157135,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Wolves",
+                "event_time_elapsed": 32
+            },
+            {
+                "fixture_id": 157105,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Arsenal",
+                "event_time_elapsed": 83
+            },
+            {
+                "fixture_id": 157106,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Everton",
+                "event_time_elapsed": 20
+            },
+            {
+                "fixture_id": 157139,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Crystal Palace",
+                "event_time_elapsed": 43
+            },
+            {
+                "fixture_id": 157140,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Norwich",
+                "event_time_elapsed": 55
+            },
+            {
+                "fixture_id": 157109,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Manchester City",
+                "event_player_name": "Kevin De Bruyne"
+            },
+            {
+                "fixture_id": 157141,
+                "event_detail": "Normal Goal",
+                "event_team_name": "Manchester City",
+                "event_time_elapsed": 90
+            },
+            {
+                "fixture_id": 20710,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Celta Vigo",
+                "event_time_elapsed": -4
+            },
+            {
+                "fixture_id": 17671,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Crystal Palace",
+                "event_time_elapsed": 73
+            },
+            {
+                "fixture_id": 20707,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Valencia",
+                "event_time_elapsed": 90
+            },
+            {
+                "fixture_id": 20817,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Real Sociedad",
+                "event_time_elapsed": 37
+            },
+            {
+                "fixture_id": 93391,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Montpellier",
+                "event_time_elapsed": 80
+            },
+            {
+                "fixture_id": 157626,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Nimes",
+                "event_time_elapsed": 89
+            },
+            {
+                "fixture_id": 214197,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Mallorca",
+                "event_time_elapsed": 36
+            },
+            {
+                "fixture_id": 214204,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Celta Vigo",
+                "event_time_elapsed": 26
+            },
+            {
+                "fixture_id": 20641,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Leganes",
+                "event_player_name": "Adri\u00e1n Mar\u00edn",
+                "event_time_elapsed": 83
+            },
+            {
+                "fixture_id": 93304,
+                "event_detail": "Yellow Card",
+                "event_team_name": "SC Bastia",
+                "event_time_elapsed": 38
+            },
+            {
+                "max_return": 2,
+                "fixture_id": 93349,
+                "event_detail": "Yellow Card",
+                "event_team_name": "Dijon",
+                "event_time_elapsed": 89
+            }
+        ],
+        "DATA_TO_CHANGE": [
+            {
+                "col_details": {
+                    "fixture_id": 152985,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 1
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 153053,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 16890,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 1
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 16907,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 17500,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 7
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20627,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 84
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20686,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 65
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20707,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 49
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20710,
+                    "event_time_elapsed": -5,
+                    "event_detail": "Red Card"
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20710,
+                    "event_time_elapsed": -4,
+                    "event_detail": "Red Card"
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20737,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 1
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20740,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 1
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20746,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 1
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20756,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 84
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20761,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 82
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20780,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 86
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20781,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20793,
+                    "event_time_elapsed": -5,
+                    "event_detail": "Red Card"
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 85
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20793,
+                    "event_time_elapsed": -5,
+                    "event_detail": "Yellow Card"
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 85,
+                    "event_comments": "Consecutive Yellow"
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20800,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20815,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20819,
+                    "event_time_elapsed": -3
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 45,
+                    "event_time_elapsed_plus": 3
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 20823,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 4
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 21476,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 60
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 21520,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 66
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 21596,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 53
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 78621,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 80
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 78731,
+                    "event_time_elapsed": -4
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 90,
+                    "event_time_elapsed_plus": 5
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 78753,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 84
+                }
+            },
+            {
+                "col_details": {
+                    "fixture_id": 78842,
+                    "event_time_elapsed": -5
+                },
+                "values_to_change": {
+                    "event_time_elapsed": 73
+                }
+            }
+        ]
+    },
+    "FEATURE_SET": {
+        "COLUMNS": [
+            "home_shots_ont_pct",
+            "away_shots_ont_pct",
+            "home_shots_inb_pct",
+            "away_shots_inb_pct",
+            "home_shots_bl_pct",
+            "away_shots_bl_pct",
+            "home_shots_tot",
+            "away_shots_tot",
+            "home_passes_pct",
+            "away_passes_pct",
+            "home_possession",
+            "away_possession",
+            "home_corners",
+            "away_corners",
+            "home_offsides",
+            "away_offsides",
+            "home_fouls",
+            "away_fouls",
+            "home_yc",
+            "away_yc",
+            "home_rc",
+            "away_rc",
+            "home_gksaves",
+            "away_gksaves"
+        ]
+    },
+    "SELECTED_IDS": [
+        
+    ],
+    "WORLD_DATA": {
+        "KEY_FIXTURE_ROUNDS": ["Final", "Semi Finals - Second Leg", "Semi Finals - First Leg",
+            "Quarter Finals - Second Leg", "Quarter Finals - First Leg",
+            "Round 16 - Second Leg", "Round 16 - First Leg",
+            "Round 32 - Second Leg", "Round 32 - First Leg",
+            "GROUP G - Matchday 6", "GROUP H - Matchday 6",
+            "GROUP I - Matchday 6", "GROUP J - Matchday 6",
+            "GROUP K - Matchday 6", "GROUP L - Matchday 6",
+            "GROUP A - Matchday 6", "GROUP B - Matchday 6",
+            "GROUP C - Matchday 6", "GROUP D - Matchday 6",
+            "GROUP E - Matchday 6", "GROUP F - Matchday 6",
+            "GROUP A - Matchday 5", "GROUP B - Matchday 5",
+            "GROUP C - Matchday 5", "GROUP D - Matchday 5",
+            "GROUP E - Matchday 5", "GROUP F - Matchday 5",
+            "GROUP G - Matchday 5", "GROUP H - Matchday 5",
+            "GROUP I - Matchday 5", "GROUP J - Matchday 5",
+            "GROUP K - Matchday 5", "GROUP L - Matchday 5",
+            "GROUP G - Matchday 4", "GROUP H - Matchday 4",
+            "GROUP I - Matchday 4", "GROUP J - Matchday 4",
+            "GROUP K - Matchday 4", "GROUP L - Matchday 4",
+            "GROUP A - Matchday 4", "GROUP B - Matchday 4",
+            "GROUP C - Matchday 4", "GROUP D - Matchday 4",
+            "GROUP E - Matchday 4", "GROUP F - Matchday 4",
+            "GROUP A - Matchday 3", "GROUP B - Matchday 3",
+            "GROUP C - Matchday 3", "GROUP D - Matchday 3",
+            "GROUP E - Matchday 3", "GROUP F - Matchday 3",
+            "GROUP G - Matchday 3", "GROUP H - Matchday 3",
+            "GROUP I - Matchday 3", "GROUP J - Matchday 3",
+            "GROUP K - Matchday 3", "GROUP L - Matchday 3",
+            "GROUP A - Matchday 2", "GROUP B - Matchday 2",
+            "GROUP C - Matchday 2", "GROUP D - Matchday 2",
+            "GROUP E - Matchday 2", "GROUP F - Matchday 2",
+            "GROUP G - Matchday 2", "GROUP H - Matchday 2",
+            "GROUP I - Matchday 2", "GROUP J - Matchday 2",
+            "GROUP K - Matchday 2", "GROUP L - Matchday 2",
+            "GROUP G - Matchday 1", "GROUP H - Matchday 1",
+            "GROUP I - Matchday 1", "GROUP J - Matchday 1",
+            "GROUP K - Matchday 1", "GROUP L - Matchday 1",
+            "GROUP A - Matchday 1", "GROUP B - Matchday 1",
+            "GROUP C - Matchday 1", "GROUP D - Matchday 1",
+            "GROUP E - Matchday 1", "GROUP F - Matchday 1", "FINAL - Final",
+            "GROUP F - 6", "GROUP G - 6", "GROUP I - 6", "GROUP K - 6",
+            "GROUP A - 6", "GROUP B - 6", "GROUP C - 6", "GROUP D - 6",
+            "GROUP E - 6", "GROUP H - 6", "GROUP J - 6", "GROUP L - 6",
+            "GROUP A - 5", "GROUP B - 5", "GROUP C - 5", "GROUP D - 5",
+            "GROUP E - 5", "GROUP F - 5", "GROUP G - 5", "GROUP H - 5",
+            "GROUP I - 5", "GROUP J - 5", "GROUP K - 5", "GROUP L - 5",
+            "GROUP G - 4", "GROUP H - 4", "GROUP I - 4", "GROUP J - 4",
+            "GROUP K - 4", "GROUP L - 4", "GROUP A - 4", "GROUP B - 4",
+            "GROUP C - 4", "GROUP D - 4", "GROUP E - 4", "GROUP F - 4",
+            "GROUP A - 3", "GROUP B - 3", "GROUP C - 3", "GROUP D - 3",
+            "GROUP E - 3", "GROUP F - 3", "GROUP G - 3", "GROUP H - 3",
+            "GROUP I - 3", "GROUP J - 3", "GROUP K - 3", "GROUP L - 3",
+            "GROUP A - 2", "GROUP B - 2", "GROUP C - 2", "GROUP D - 2",
+            "GROUP E - 2", "GROUP F - 2", "GROUP G - 2", "GROUP H - 2",
+            "GROUP I - 2", "GROUP J - 2", "GROUP K - 2", "GROUP L - 2",
+            "GROUP G - 1", "GROUP H - 1", "GROUP I - 1", "GROUP J - 1",
+            "GROUP K - 1", "GROUP L - 1", "GROUP A - 1", "GROUP B - 1",
+            "GROUP C - 1", "GROUP D - 1", "GROUP E - 1", "GROUP F - 1",
+            "Group Stage - 1", "Group Stage - 2", "Group Stage - 3",
+            "Group Stage - 4", "Group Stage - 5", "Group Stage - 6",
+            "16th Finals", "8th Finals", "Quarter-finals", "Semi-finals", "32nd Finals"]
+    }
+}

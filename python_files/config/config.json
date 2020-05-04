@@ -1,0 +1,118 @@
+{
+    "FILES": {
+        "COUNT_LOGS": "logs/api_call_count_logs.json",
+        "REQUEST_LOGS": "logs/api_call_request_logs.json"
+    },
+    "DIRS": {
+        "PROJECT_ROOT": "",
+        "API_DATA": "data/api-data",
+        "BUGS_DATA": "bugs/data",
+        "CSV_OF_JSON_DATA": "data/csv_of_json_data",
+        "FEATURE_SETS": "data/feature_sets"
+    },
+    "DAILY_REQUEST_LIMIT": 100,
+    "API_ACTIONS": {
+        "SEASONS": {
+            "name": "seasons",
+            "num_params": 0,
+            "group": "general",
+            "response": "seasons",
+            "coverage_name": null
+        },
+        "PLAYER_SEASONS": {
+            "name": "players/seasons",
+            "num_params": 0,
+            "group": "general",
+            "response": "players",
+            "coverage_name": null
+        },
+        "COUNTRIES": {
+            "name": "countries",
+            "num_params": 0,
+            "group": "general",
+            "response": "countries",
+            "coverage_name": null
+        },
+        "LEAGUES": {
+            "name": "leagues",
+            "num_params": 0,
+            "group": "general",
+            "response": "leagues",
+            "coverage_name": null
+        },
+        "ROUNDS": {
+            "name": "fixtures/rounds",
+            "num_params": 1,
+            "group": "league",
+            "response": "fixtures",
+            "coverage_name": null
+        },
+        "LEAGUE_TEAMS": {
+            "name": "teams/league",
+            "num_params": 1,
+            "group": "league",
+            "response": "teams",
+            "coverage_name": null
+        },
+        "LEAGUE_FIXTURES": {
+            "name": "fixtures/league",
+            "num_params": 1,
+            "group": "league",
+            "response": "fixtures",
+            "coverage_name": null
+        },
+        "LEAGUE_TOPSCORERS": {
+            "name": "topscorers",
+            "num_params": 1,
+            "group": "league",
+            "response": "topscorers",
+            "coverage_name": "topScorers"
+        },
+        "LEAGUE_STANDINGS": {
+            "name": "leagueTable",
+            "num_params": 1,
+            "group": "league",
+            "response": "standings",
+            "coverage_name": "standings"
+        },
+        "FIXTURES_ALL": {
+            "name": "fixtures/id",
+            "num_params": 1,
+            "group": "fixture",
+            "response": "fixtures",
+            "coverage_name": null
+        },
+        "FIXTURE_PREDICTIONS": {
+            "name": "predictions",
+            "num_params": 1,
+            "group": "fixture",
+            "response": "predictions",
+            "coverage_name": "predictions"
+        },
+        "H2H": {
+            "name": "fixtures/h2h",
+            "num_params": 2,
+            "group": "h2h",
+            "response": ["teams", "fixtures"],
+            "coverage_name": null
+        }
+    },
+    "KEY_COUNTRIES" : [
+        "England", "France", "Germany", "Italy", "Spain", "World"],
+    "KEY_COMPETITIONS": [
+        "Premier League", "Ligue 1", "Bundesliga 1", "Serie A", "Primera Division", "Champions League", "Europa League"],
+    "KEY_DOMESTIC_CUPS": [
+        "FA Cup", "League Cup", "Coupe de la Ligue", "Coupe de France", "DFB Pokal", "Coppa Italia", "Copa del Rey"],
+    "ALL_LEAGUES_AND_CUPS": [
+        "Premier League", "Ligue 1", "Bundesliga 1", "Serie A", "Primera Division",
+        "FA Cup", "League Cup", "Coupe de la Ligue", "Coupe de France", "DFB Pokal", "Coppa Italia", "Copa del Rey",
+        "Champions League", "Europa League"],
+    "2ND_KEY_COUNTRIES": [
+        "Argentina", "Australia", "Belgium", "Brazil", "China", "Croatia", "Czech-Republic", "Denmark", "Egypt",
+        "England", "Finland", "France", "Germany", "Greece", "Iceland", "Iran", "Ireland", "Italy", "Japan", "Mexico",
+        "Netherlands", "New-Zealand", "Northern-Ireland", "Norway", "Poland", "Portugal", "Russia", "Saudi-Arabia",
+        "Scotland", "Spain", "Sweden", "Switzerland", "Turkey", "USA", "Wales", "World"],
+    "AVOID_LEAGUES_THAT_CONTAIN" :[
+        "Amateur", "Group", "Provincial", "Regionalliga", "Lohko", "3", "Youth", "U21", "4", "Paulista", "Gaúcho", "Girone", "Non League", "National League", "Tercera", "Segunda", "2nd"
+    ]
+}

@@ -1,0 +1,26 @@
+model {
+    for (g in 1:nGames) {
+        homeRating.data[g] ~ dnorm(homeRating.mu[HomeT[g]], homeRating.tau[HomeT[g]])
+        awayRating.data[g] ~ dnorm(awayRating.mu[AwayT[g]], awayRating.tau[AwayT[g]])
+    }
+    
+    for (t in 1:nTeams) {
+        homeRating.mu[t] ~ dgamma(homeRating.mu.shape, homeRating.mu.rate)
+        homeRating.tau[t] ~ dgamma(homeRating.tau.shape, homeRating.tau.rate)
+        
+        awayRating.mu[t] ~ dgamma(awayRating.mu.shape, awayRating.mu.rate)
+        awayRating.tau[t] ~ dgamma(awayRating.tau.shape, awayRating.tau.rate)
+    }
+    
+    homeRating.mu.shape ~ dgamma(0.1, 0.1)
+    homeRating.mu.rate ~ dgamma(0.1, 0.1)
+    
+    homeRating.tau.shape ~ dgamma(0.1, 0.1)
+    homeRating.tau.rate ~ dgamma(0.1, 0.1)
+        
+    awayRating.mu.shape ~ dgamma(0.1, 0.1)
+    awayRating.mu.rate ~ dgamma(0.1, 0.1)
+    
+    awayRating.tau.shape ~ dgamma(0.1, 0.1)
+    awayRating.tau.rate ~ dgamma(0.1, 0.1)
+}

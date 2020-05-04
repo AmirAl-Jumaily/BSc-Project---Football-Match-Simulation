@@ -1,0 +1,7 @@
+{
+    "API_KEY": "XXXX-ENTER-API-KEY-XXXX", 
+    "HEADERS": {
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        "x-rapidapi-key": "XXXX-ENTER-API-KEY-XXXX"
+    }
+}

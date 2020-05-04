@@ -1,0 +1,30 @@
+model {
+    for (g in 1:nGames) {
+        home.data[g] ~ dpois(home.lambda[HomeT[g]])
+        # awayOpp.data[g] ~ dpois(againstAwayTeam.lambda[AwayT[g]])
+        
+        away.data[g] ~ dpois(away.lambda[AwayT[g]])
+        # homeOpp.data[g] ~ dpois(againstHomeTeam.lambda[HomeT[g]])
+    }
+    
+
+    for (t in 1:nTeams) {
+        home.lambda[t] ~ dgamma(home.lambda.shape, home.lambda.rate)
+        away.lambda[t] ~ dgamma(away.lambda.shape, away.lambda.rate)
+
+        # againstHomeTeam.lambda[t] ~ dgamma(againstHomeTeam.lambda.shape, againstHomeTeam.lambda.rate)
+        # againstAwayTeam.lambda[t] ~ dgamma(againstAwayTeam.lambda.shape, againstAwayTeam.lambda.rate)
+    }
+
+    home.lambda.shape ~ dgamma(0.1, 0.1)
+    home.lambda.rate ~ dgamma(0.1, 0.1)
+
+    away.lambda.shape ~ dgamma(0.1, 0.1)
+    away.lambda.rate ~ dgamma(0.1, 0.1)
+
+    # againstHomeTeam.lambda.shape ~ dgamma(0.1, 0.1)
+    # againstHomeTeam.lambda.rate ~ dgamma(0.1, 0.1)
+
+    # againstAwayTeam.lambda.shape ~ dgamma(0.1, 0.1)
+    # againstAwayTeam.lambda.rate ~ dgamma(0.1, 0.1)
+}
